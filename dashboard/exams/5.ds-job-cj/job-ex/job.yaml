@@ -1,0 +1,18 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: mycronjob-jobexample
+spec:
+  # Một phút chạy một Job
+  schedule: "*/1 * * * *"
+  # Số Job lưu lại
+  successfulJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: jobexample
+            image: duyhenryer/cronjob:latest
+            command: ["10"]
+          restartPolicy: Never

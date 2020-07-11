@@ -20,7 +20,8 @@ case "$command" in
 	cd worker2.xtl && vagrant up
 	
 	echo "vagrant up done"
-
+	;;	
+	
      "reload" )
 	echo "master reload"
 	echo "--------------------"
@@ -39,5 +40,7 @@ case "$command" in
 	echo "--------------------"
 	echo "vagrant reload done"
 
-
-
+  	*)
+      	echo "typing wrong! "
+    	;;
+esac

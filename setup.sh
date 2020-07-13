@@ -39,8 +39,9 @@ case "$command" in
 
 	echo "--------------------"
 	echo "vagrant reload done"
-
-  	*)
-      	echo "typing wrong! "
-    	;;
+	
+        ;;
+    * )
+        echo "wrong deploy type!"
+        ;;
 esac

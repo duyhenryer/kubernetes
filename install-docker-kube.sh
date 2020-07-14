@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Cập nhật 12/2019
+# Update 12/2019
 
-# Cai dat Docker
+# Instll Docker
 yum install -y yum-utils device-mapper-persistent-data lvm2
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 yum update -y && yum install docker-ce-18.06.2.ce -y
@@ -35,11 +35,11 @@ systemctl daemon-reload
 systemctl restart docker
 
 
-# Tat SELinux
+#  SELinux
 setenforce 0
 sed -i --follow-symlinks 's/^SELINUX=enforcing/SELINUX=disabled/' /etc/sysconfig/selinux
 
-# Tat Firewall
+#  Firewall
 systemctl disable firewalld >/dev/null 2>&1
 systemctl stop firewalld
 
@@ -50,7 +50,7 @@ net.bridge.bridge-nf-call-iptables = 1
 EOF
 sysctl --system >/dev/null 2>&1
 
-# Tat swap
+#  swap
 sed -i '/swap/d' /etc/fstab
 swapoff -a
 

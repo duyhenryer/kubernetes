@@ -7,17 +7,17 @@ case "$command" in
      "up" )
 	echo "master up"
 	echo "--------------------"
-	cd master.xtl && vagrant up
+	cd master && vagrant up
 	cd ..
 
 	echo "worker-1 up"
 	echo "--------------------"
-	cd worker1.xtl && vagrant up
+	cd worker1 && vagrant up
 	cd ..
 
 	echo "worker-2 up"
 	echo "--------------------"
-	cd worker2.xtl && vagrant up
+	cd worker2 && vagrant up
 	
 	echo "vagrant up done"
 	;;	
@@ -25,23 +25,23 @@ case "$command" in
      "reload" )
 	echo "master reload"
 	echo "--------------------"
-	cd master.xtl && vagrant reload
+	cd master && vagrant reload
 	cd ..
 
 	echo "worker-1 reload"
 	echo "--------------------"
-	cd worker1.xtl && vagrant reload
+	cd worker1 && vagrant reload
 	cd ..
 
 	echo "worker-2 reload"
 	echo "--------------------"
-	cd worker2.xtl && vagrant reload
+	cd worker2 && vagrant reload
 
 	echo "--------------------"
 	echo "vagrant reload done"
 	
-        ;;
+    ;;
     * )
-        echo "wrong deploy type!"
-        ;;
+    echo "wrong type!"
+    ;;
 esac
